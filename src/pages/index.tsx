@@ -24,13 +24,30 @@ interface HomeProps {
   postsPagination: PostPagination;
 }
 
-// export default function Home() {
-//   // TODO
-// }
+interface TesteProps {
+  posts: Post[];
+}
 
-// export const getStaticProps = async () => {
-//   // const prismic = getPrismicClient({});
-//   // const postsResponse = await prismic.getByType(TODO);
+export default function Home({ posts }: TesteProps): JSX.Element {
+  return (
+    <div>
+      <h1>Hello World</h1>
+    </div>
+  );
+}
 
-//   // TODO
-// };
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismicClient({});
+  const postsResponse = await prismic.getByType('post', {
+    pageSize: 2,
+  });
+
+  // TODO
+  console.log(postsResponse);
+
+  return {
+    props: {
+      posts: 'MARQUINDJ',
+    },
+  };
+};

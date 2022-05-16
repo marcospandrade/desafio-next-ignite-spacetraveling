@@ -1,0 +1,71 @@
+{
+  "id": "94616501-080c-4fc4-b57c-8d03c089548c",
+  "uid": "aut-alias-tempora",
+  "type": "post",
+  "data": {
+    "banner": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?w=900&h=500&fit=crop"
+    },
+    "title": "empower best-of-breed schemas",
+    "subtitle": "harness seamless eyeballs",
+    "author": "syndicate killer infomediaries",
+    "content": [
+      {
+        "heading": "evolve web-enabled action-items",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Irure officia dolore eu in qui fugiat Lorem proident incididunt amet.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "architect extensible solutions",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Do cupidatat nostrud aliqua proident commodo proident officia adipisicing ullamco.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "grow out-of-the-box schemas",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Id ipsum et excepteur amet eu. Quis dolor qui laborum aliquip qui sint commodo sint aliquip excepteur tempor amet. Labore sit commodo proident qui do cillum cillum elit laboris ex non sunt laborum ad tempor.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "reinvent real-time solutions",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Enim nostrud ex nisi laboris incididunt eiusmod nulla commodo et et laborum. Esse nulla id laborum ex exercitation elit cupidatat exercitation sit.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "aggregate killer infomediaries",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Esse quis aute laboris tempor anim qui et cupidatat ipsum incididunt nisi.",
+            "spans": []
+          }
+        ]
+      }
+    ]
+  }
+}
