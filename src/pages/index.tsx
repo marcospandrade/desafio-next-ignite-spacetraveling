@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
 
 import { getPrismicClient } from '../services/prismic';
 
@@ -30,20 +31,22 @@ interface TesteProps {
 
 export default function Home({ posts }: TesteProps): JSX.Element {
   return (
-    <div>
+    <>
+      <Head>
+        <title>Home | SpaceTraveling</title>
+      </Head>
       <h1>Hello World</h1>
-    </div>
+    </>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   const prismic = getPrismicClient({});
-  const postsResponse = await prismic.getByType('post', {
-    pageSize: 2,
-  });
+  // const postsResponse = await prismic.getByType('post', {
+  //   pageSize: 2,
+  // });
 
   // TODO
-  console.log(postsResponse);
 
   return {
     props: {
