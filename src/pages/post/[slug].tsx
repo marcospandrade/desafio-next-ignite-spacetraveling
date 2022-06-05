@@ -37,7 +37,7 @@ export default function Post(): JSX.Element {
 //   // TODO
 // };
 
-// export const getStaticProps = async ({params }) => {
+// export const getStaticProps = async ({ params }) => {
 //   const prismic = getPrismicClient({});
 //   const response = await prismic.getByUID(TODO);
 

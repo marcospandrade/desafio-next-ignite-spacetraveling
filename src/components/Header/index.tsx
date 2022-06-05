@@ -16,7 +16,7 @@ export default function Header(): JSX.Element {
           <ActiveLink href="/" activeClassName={styles.active}>
             <a>Home</a>
           </ActiveLink>
-          <ActiveLink href="/posts" activeClassName={styles.active}>
+          <ActiveLink href="/post" activeClassName={styles.active}>
             <a>Posts</a>
           </ActiveLink>
           <ActiveLink href="/contact" activeClassName={styles.active}>
