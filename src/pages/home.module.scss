@@ -1,17 +1,11 @@
-.container {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 2rem;
-
-  .btnLoadMorePosts {
-    margin: 0 0 5rem;
-    font-size: 1.125rem;
-    font-weight: 600;
-    line-height: 1.375rem;
-    color: var(--highlight);
-    background-color: transparent;
-    border: none;
-  }
+.btnLoadMorePosts {
+  margin: 0 0 5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.375rem;
+  color: var(--highlight);
+  background-color: transparent;
+  border: none;
 }
 
 .posts {
