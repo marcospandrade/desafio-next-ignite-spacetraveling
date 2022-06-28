@@ -1,5 +1,5 @@
 import { format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
+import ptBR from 'date-fns/locale/pt-BR';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -44,7 +44,11 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
           const newPosts = resultJson.results.map((post: Post) => {
             return {
               uid: post.uid,
-              first_publication_date: post.first_publication_date,
+              first_publication_date: format(
+                new Date(post.first_publication_date),
+                'dd MMM yyyy',
+                { locale: ptBR }
+              ),
               data: {
                 title: post.data.title,
                 subtitle: post.data.subtitle,
@@ -75,17 +79,9 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
                 <strong>{post.data.title}</strong>
                 <p>{post.data.subtitle}</p>
 
-                <div className={styles.postInfo}>
+                <div className={commonStyles.postInfo}>
                   <FiCalendar />
-                  <time>
-                    {format(
-                      new Date(post.first_publication_date),
-                      'dd MMM yyyy',
-                      {
-                        locale: ptBR,
-                      }
-                    )}
-                  </time>
+                  <time>{post.first_publication_date}</time>
                   <FiUser />
                   <span>{post.data.author}</span>
                 </div>
@@ -120,7 +116,11 @@ export const getStaticProps: GetStaticProps = async () => {
   const postsResponse: Post[] = response.results.map(post => {
     return {
       uid: post.uid,
-      first_publication_date: post.first_publication_date,
+      first_publication_date: format(
+        new Date(post.first_publication_date),
+        'dd MMM yyyy',
+        { locale: ptBR }
+      ),
       data: {
         title: post.data.title,
         subtitle: post.data.subtitle,
