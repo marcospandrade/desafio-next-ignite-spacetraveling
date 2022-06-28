@@ -45,28 +45,4 @@
       color: var(--highlight);
     }
   }
-
-  .postInfo {
-    display: flex;
-    align-items: center;
-    margin-top: 1.5rem;
-    color: var(--gray-600);
-
-    svg {
-      margin-right: 0.5rem;
-    }
-
-    time {
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      line-height: 1rem;
-      margin-right: 1.5rem;
-    }
-
-    span {
-      font-size: 0.875rem;
-      line-height: 1rem;
-    }
-  }
 }
