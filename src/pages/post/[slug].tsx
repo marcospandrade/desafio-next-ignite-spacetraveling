@@ -1,3 +1,4 @@
+import { asHTML, asText } from '@prismicio/helpers';
 import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { GetStaticPaths, GetStaticProps } from 'next';
@@ -5,7 +6,6 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect, useState } from 'react';
 import { FiCalendar, FiClock, FiUser } from 'react-icons/fi';
-
 import { getPrismicClient } from '../../services/prismic';
 
 import commonStyles from '../../styles/common.module.scss';
@@ -37,21 +37,29 @@ interface PostProps {
 export default function Post({ post }: PostProps): JSX.Element {
   const router = useRouter();
   const [timeReading, setTimeReading] = useState<string>('');
-
+  console.log(post);
   const calculateReadingTime = useCallback(() => {
-    const wordsPerMinute = 225;
-    const words = post.data.content.reduce((acc, content) => {
-      return acc + content.body.length;
-    }, 0);
-    const minutes = Math.ceil(words / wordsPerMinute);
-    setTimeReading(`${minutes} min`);
+    const wordsPerMinute = 200;
+    // const words = post.data.content.reduce((acc, content) => {
+    //   const sectionHeadingLength = content.heading.trim().length;
+    //   const sectionBodyLength = content.body.reduce((accBody, body) => {
+    //     return accBody + body.text.trim().length;
+    //   }, 0);
+    //   console.log('content.body', content.body);
+    //   // const sectionBodyLength = content.body.map(() => {
+
+    //   // })
+    //   return acc + (sectionHeadingLength + sectionBodyLength);
+    // }, 0);
+
+    // const minutes = Math.ceil(words / wordsPerMinute);
+    setTimeReading(`${'minutes'} min`);
   }, [post.data.content]);
 
   useEffect(() => {
     calculateReadingTime();
   }, [calculateReadingTime, post]);
 
-  console.log(post);
   // If the page is not yet generated, this will be displayed
   // initially until getStaticProps() finishes running
   if (router.isFallback) {
@@ -126,12 +134,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         url: response.data.banner.url,
       },
       author: response.data.author,
-      content: response.data.content.map((detailContent: ContentProps) => {
-        return {
-          heading: detailContent.heading,
-          body: detailContent.body,
-        };
-      }),
+      content: response.data.content,
     },
   };
 
